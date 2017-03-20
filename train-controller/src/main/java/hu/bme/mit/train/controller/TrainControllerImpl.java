@@ -11,6 +11,8 @@ public class TrainControllerImpl implements TrainController {
 	private int step = 0;
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
+	private int delay = 0;
+	private int period = 500;
 
 	@Override
 	public void followSpeed() {
@@ -57,7 +59,7 @@ public class TrainControllerImpl implements TrainController {
 				}
 			};
 			Timer timer= new Timer();
-			timer.scheduleAtFixedRate(timertask, 0, 1000);
+			timer.scheduleAtFixedRate(timertask, delay, period);
 		}
 	}
 }
